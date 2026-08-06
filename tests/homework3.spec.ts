@@ -10,6 +10,4 @@ test('Verify SauceDemo title and URL', async ({ page }) => {
 
   await expect(page).toHaveURL('https://saucelabs.com/');
 
-
-  await page.waitForTimeout(2000);
 });
