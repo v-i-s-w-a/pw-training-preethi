@@ -1,20 +1,8 @@
-import { test, expect } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
-import { ProductsPage } from '../pages/ProductsPage';
-import { CartPage } from '../pages/CartPage';
+import { expect } from '@playwright/test';
+import { test } from '../fixtures/fixtures';
 
-test('Verify products can be added and removed from cart', async ({ page }) => {
 
-    const loginPage = new LoginPage(page);
-    const productsPage = new ProductsPage(page);
-    const cartPage = new CartPage(page);
-
-    await loginPage.login('standard_user', 'secret_sauce');
-
-    await productsPage.addToCart('Sauce Labs Backpack');
-    await productsPage.addToCart('Sauce Labs Bike Light');
-
-    await productsPage.openCart();
+test('Verify products can be added and removed from cart', async ({ cartPage }) => {
 
     const itemNames = await cartPage.itemNames();
 
