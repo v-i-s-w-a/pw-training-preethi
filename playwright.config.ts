@@ -39,7 +39,6 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] , storageState: '.auth/standard.json' },
       dependencies: ['setup'],
-      testMatch: /homework6\.spec\.ts/,
       testIgnore: /problem-user\.spec\.ts/,
     },
     {
