@@ -47,6 +47,24 @@ export default defineConfig({
         dependencies: ['setup'],
         testMatch: /problem-user\.spec\.ts/,
     },
+    {
+  name: 'firefox',
+  use: {
+    ...devices['Desktop Firefox'],
+    storageState: '.auth/standard.json',
+  },
+  dependencies: ['setup'],
+  testIgnore: /problem-user\.spec\.ts/,
+},
+{
+  name: 'webkit',
+  use: {
+    ...devices['Desktop Safari'],
+    storageState: '.auth/standard.json',
+  },
+  dependencies: ['setup'],
+  testIgnore: /problem-user\.spec\.ts/,
+},
 
     // {
     //   name: 'firefox',
